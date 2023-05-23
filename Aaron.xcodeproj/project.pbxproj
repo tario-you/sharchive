@@ -15,6 +15,11 @@
 		A045535D29E9839A0027B559 /* AaronTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A045535C29E9839A0027B559 /* AaronTests.swift */; };
 		A045536729E9839A0027B559 /* AaronUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A045536629E9839A0027B559 /* AaronUITests.swift */; };
 		A045536929E9839A0027B559 /* AaronUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A045536829E9839A0027B559 /* AaronUITestsLaunchTests.swift */; };
+		A045537629E98CA00027B559 /* Crewmate.dae in Resources */ = {isa = PBXBuildFile; fileRef = A045537529E98CA00027B559 /* Crewmate.dae */; };
+		A04E1F4229EFBFA800FD0213 /* glass3.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A04E1F4129EFBFA800FD0213 /* glass3.usdz */; };
+		A04E1F4429EFC24900FD0213 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E1F4329EFC24900FD0213 /* SceneDelegate.swift */; };
+		A04E1F4629EFC2CD00FD0213 /* tabletest.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A04E1F4529EFC2CD00FD0213 /* tabletest.usdz */; };
+		A04E1F4829EFC66700FD0213 /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = A04E1F4729EFC66600FD0213 /* overlay.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		A045536229E9839A0027B559 /* AaronUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AaronUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A045536629E9839A0027B559 /* AaronUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AaronUITests.swift; sourceTree = "<group>"; };
 		A045536829E9839A0027B559 /* AaronUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AaronUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A045537529E98CA00027B559 /* Crewmate.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Crewmate.dae; sourceTree = "<group>"; };
+		A04E1F4129EFBFA800FD0213 /* glass3.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = glass3.usdz; sourceTree = "<group>"; };
+		A04E1F4329EFC24900FD0213 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A04E1F4529EFC2CD00FD0213 /* tabletest.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = tabletest.usdz; sourceTree = "<group>"; };
+		A04E1F4729EFC66600FD0213 /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +106,12 @@
 		A045534829E983990027B559 /* Aaron */ = {
 			isa = PBXGroup;
 			children = (
+				A04E1F4329EFC24900FD0213 /* SceneDelegate.swift */,
 				A045534929E983990027B559 /* AppDelegate.swift */,
+				A04E1F4529EFC2CD00FD0213 /* tabletest.usdz */,
+				A045537529E98CA00027B559 /* Crewmate.dae */,
+				A04E1F4129EFBFA800FD0213 /* glass3.usdz */,
+				A04E1F4729EFC66600FD0213 /* overlay.png */,
 				A045534B29E983990027B559 /* ContentView.swift */,
 				A045534D29E983990027B559 /* Experience.rcproject */,
 				A045534F29E9839A0027B559 /* Assets.xcassets */,
@@ -234,8 +249,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04E1F4829EFC66700FD0213 /* overlay.png in Resources */,
+				A04E1F4229EFBFA800FD0213 /* glass3.usdz in Resources */,
+				A045537629E98CA00027B559 /* Crewmate.dae in Resources */,
 				A045535329E9839A0027B559 /* Preview Assets.xcassets in Resources */,
 				A045535029E9839A0027B559 /* Assets.xcassets in Resources */,
+				A04E1F4629EFC2CD00FD0213 /* tabletest.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +282,7 @@
 				A045534C29E983990027B559 /* ContentView.swift in Sources */,
 				A045534A29E983990027B559 /* AppDelegate.swift in Sources */,
 				A045534E29E983990027B559 /* Experience.rcproject in Sources */,
+				A04E1F4429EFC24900FD0213 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Aaron/Preview Content\"";
+				DEVELOPMENT_TEAM = NP76UH8NZG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -435,7 +456,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = aaron.Aaron;
+				PRODUCT_BUNDLE_IDENTIFIER = aaron.Aaronaaa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -451,6 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Aaron/Preview Content\"";
+				DEVELOPMENT_TEAM = NP76UH8NZG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -465,7 +487,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = aaron.Aaron;
+				PRODUCT_BUNDLE_IDENTIFIER = aaron.Aaronaaa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
