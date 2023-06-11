@@ -12,6 +12,8 @@
 		A05EA8B02A229E45007F0033 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EA8AF2A229E45007F0033 /* MenuViewController.swift */; };
 		A05EA8B22A229E56007F0033 /* CameraLineUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05EA8B12A229E56007F0033 /* CameraLineUpViewController.swift */; };
 		A05EA8B42A229E6A007F0033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05EA8B32A229E6A007F0033 /* Main.storyboard */; };
+		A073626B2A2CCF1E004EEB51 /* drone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A073626A2A2CCF1E004EEB51 /* drone.usdz */; };
+		A07F5DEF2A35E7F000E20DDA /* wireframe.png in Resources */ = {isa = PBXBuildFile; fileRef = A07F5DEE2A35E7F000E20DDA /* wireframe.png */; };
 		A0B1BF682A229D86006A2AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1BF672A229D86006A2AF1 /* AppDelegate.swift */; };
 		A0B1BF6A2A229D86006A2AF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1BF692A229D86006A2AF1 /* SceneDelegate.swift */; };
 		A0B1BF712A229D87006A2AF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B1BF702A229D87006A2AF1 /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 		A05EA8AF2A229E45007F0033 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A05EA8B12A229E56007F0033 /* CameraLineUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLineUpViewController.swift; sourceTree = "<group>"; };
 		A05EA8B32A229E6A007F0033 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A073626A2A2CCF1E004EEB51 /* drone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = drone.usdz; sourceTree = "<group>"; };
+		A07F5DEE2A35E7F000E20DDA /* wireframe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wireframe.png; path = Assets.xcassets/wireframe.png; sourceTree = "<group>"; };
 		A0B1BF642A229D86006A2AF1 /* SHArchive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHArchive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B1BF672A229D86006A2AF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0B1BF692A229D86006A2AF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				A05EA8B32A229E6A007F0033 /* Main.storyboard */,
 				A017480C2A22B14900E31A6F /* glass3.usdz */,
 				A0B1BF692A229D86006A2AF1 /* SceneDelegate.swift */,
+				A073626A2A2CCF1E004EEB51 /* drone.usdz */,
+				A07F5DEE2A35E7F000E20DDA /* wireframe.png */,
 				A0B1BF702A229D87006A2AF1 /* Assets.xcassets */,
 				A0B1BF752A229D87006A2AF1 /* Info.plist */,
 			);
@@ -238,7 +244,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0B1BF712A229D87006A2AF1 /* Assets.xcassets in Resources */,
+				A07F5DEF2A35E7F000E20DDA /* wireframe.png in Resources */,
 				A05EA8B42A229E6A007F0033 /* Main.storyboard in Resources */,
+				A073626B2A2CCF1E004EEB51 /* drone.usdz in Resources */,
 				A017480D2A22B14900E31A6F /* glass3.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

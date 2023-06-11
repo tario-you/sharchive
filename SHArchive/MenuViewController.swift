@@ -14,7 +14,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var button3: UIButton!
     
     var button1text: String = "Among Us Crewmate"
-    var button2text: String = "Aaron's Glass Model"
+    var button2text: String = "Glass Model"
     var button3text: String = "Placeholder"
 
     override func viewDidLoad() {

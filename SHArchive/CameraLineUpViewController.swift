@@ -47,7 +47,9 @@ class CameraLineUpViewController: UIViewController, AVCapturePhotoCaptureDelegat
             videoPreviewLayer.frame = cameraView.bounds
             cameraView.layer.addSublayer(videoPreviewLayer)
             
-            captureSession.startRunning()
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                self?.captureSession.startRunning()
+            }
         } catch {
             print(error.localizedDescription)
         }
