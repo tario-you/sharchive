@@ -72,7 +72,7 @@ class InitialViewController: UIViewController {
     let playerController = AVPlayerViewController()
 
     private func playVideo() {
-        guard let path = Bundle.main.path(forResource: "input_video_2", ofType: "mp4") else {
+        guard let path = Bundle.main.path(forResource: "test3", ofType: "mp4") else {
             debugPrint("splash.m4v not found")
             return
         }
