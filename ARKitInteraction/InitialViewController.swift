@@ -23,41 +23,45 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
-    @IBOutlet weak var button5: UIButton!
     
-    var button1text: String = "Location 1"
-    var button2text: String = "Location 2"
-    var button3text: String = "Location 3"
-    var button4text: String = "About Us"
-    var button5text: String = "How to Use"
+    @IBOutlet weak var shanghaiLabel: UILabel!
+    @IBOutlet weak var arLabel: UILabel!
+    @IBOutlet weak var chiveLabel: UILabel!
+    
+    var button1text: String = "Launch"
+    var button2text: String = "Demo"
+    var button3text: String = "About Us"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         button1.setTitle(button1text, for: .normal)
         button2.setTitle(button2text, for: .normal)
         button3.setTitle(button3text, for: .normal)
-        button4.setTitle(button4text, for: .normal)
-        button5.setTitle(button5text, for: .normal)
+        
+        button1.setTitleColor(UIColor.white, for: .normal)
+        button2.setTitleColor(UIColor.white, for: .normal)
+        button3.setTitleColor(UIColor.white, for: .normal)
+        
+        button1.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
+        button2.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button3.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        
+        shanghaiLabel.font = UIFont(name: shanghaiLabel.font.fontName, size: 40)
+        arLabel.font = UIFont(name: arLabel.font.fontName, size: 40)
+        chiveLabel.font = UIFont(name: chiveLabel.font.fontName, size: 40)
         // Additional setup code if needed
     }
     
     @IBAction func button1Pressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toViewController", sender: sender)
+        performSegue(withIdentifier: "toLocPicker", sender: sender)
     }
     
     @IBAction func button2Pressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toViewController", sender: sender)
+        performSegue(withIdentifier: "toHowToUse", sender: sender)
     }
     
     @IBAction func button3Pressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toViewController", sender: sender)
-    }
-    @IBAction func button4Pressed(_ sender: UIButton) {
         performSegue(withIdentifier: "toAboutUs", sender: sender)
-    }
-    @IBAction func button5Pressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toHowToUse", sender: sender)
     }
     
     var once = true
@@ -72,17 +76,37 @@ class InitialViewController: UIViewController {
     let playerController = AVPlayerViewController()
 
     private func playVideo() {
-        guard let path = Bundle.main.path(forResource: "test3", ofType: "mp4") else {
-            debugPrint("splash.m4v not found")
+        guard let path = Bundle.main.path(forResource: "intro_3s", ofType: "mp4") else {
+            debugPrint("intro_3s.mp4 not found")
             return
         }
+        
         let player = AVPlayer(url: URL(fileURLWithPath: path))
         playerController.showsPlaybackControls = false
         playerController.player = player
         playerController.videoGravity = .resizeAspectFill
-        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerController.player?.currentItem)
-        present(playerController, animated: true) {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: playerController.player?.currentItem)
+        
+        present(playerController, animated: false) {
             player.play()
+            
+            // Schedule a fade-out animation
+            DispatchQueue.main.asyncAfter(deadline: .now() + player.currentItem!.duration.seconds - 1.0) {
+                // Create a fade-out animation
+                let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
+                fadeOutAnimation.fromValue = 1.0
+                fadeOutAnimation.toValue = 0.0
+                fadeOutAnimation.duration = 1.0 // Adjust the duration as needed
+                
+                // Apply the fade-out animation to the playerController's view layer
+                self.playerController.view.layer.add(fadeOutAnimation, forKey: "fadeOut")
+                
+                // Dismiss the playerController after the fade-out animation completes
+                DispatchQueue.main.asyncAfter(deadline: .now() + fadeOutAnimation.duration-0.5) {
+                    self.playerController.dismiss(animated: true, completion: nil)
+                }
+            }
         }
     }
 
@@ -91,21 +115,21 @@ class InitialViewController: UIViewController {
         playerController.dismiss(animated: false){}
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toViewController" {
-            guard let nextVC = segue.destination as? ViewController else {
-                return
-            }
-            if let senderButton = sender as? UIButton {
-                if senderButton == button1 {
-                    nextVC.locationText = button1text
-                } else if senderButton == button2 {
-                    nextVC.locationText = button2text
-                } else if senderButton == button3 {
-                    nextVC.locationText = button3text
-                }
-            }
-        }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toViewController" {
+//            guard let nextVC = segue.destination as? ViewController else {
+//                return
+//            }
+//            if let senderButton = sender as? UIButton {
+//                if senderButton == button1 {
+//                    nextVC.locationText = button1text
+//                } else if senderButton == button2 {
+//                    nextVC.locationText = button2text
+//                } else if senderButton == button3 {
+//                    nextVC.locationText = button3text
+//                }
+//            }
+//        }
 //        else if segue.identifier == "toAboutUs" {
 //            guard let nextVC = segue.destination as? AboutUsViewController else {
 //                return
@@ -116,6 +140,6 @@ class InitialViewController: UIViewController {
 //                return
 //            }
 //        }
-    }
+//    }
 }
 

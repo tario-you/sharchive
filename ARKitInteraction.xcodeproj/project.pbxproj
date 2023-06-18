@@ -21,7 +21,9 @@
 		A00A360F2A3883700030B65F /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A360E2A3883700030B65F /* AboutUsViewController.swift */; };
 		A00A36112A3884120030B65F /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00A36102A3884120030B65F /* HowToUseViewController.swift */; };
 		A07B75112A3EFE4A002E375B /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B75102A3EFE4A002E375B /* SplashScreenViewController.swift */; };
-		A07B75172A3F1B7C002E375B /* test3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A07B75162A3F1B62002E375B /* test3.mp4 */; };
+		A07B75192A3F3FCF002E375B /* intro_3s.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A07B75182A3F3F64002E375B /* intro_3s.mp4 */; };
+		A0A862F12A3FAE1F008F2E0A /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A862F02A3FAE1F008F2E0A /* LocationPickerViewController.swift */; };
+		A0A862F32A3FB1A1008F2E0A /* LeagueSpartan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0A862F22A3FB1A1008F2E0A /* LeagueSpartan.ttf */; };
 		A0E41FA42A38851B00B388FA /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E41FA32A38851B00B388FA /* InitialViewController.swift */; };
 		C41366B91EB80DD400EC054A /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41366B81EB80DD400EC054A /* StatusViewController.swift */; };
 		C42A71BD1E9C0AF200944367 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42A71BC1E9C0AF200944367 /* FocusSquare.swift */; };
@@ -53,8 +55,9 @@
 		A00A360E2A3883700030B65F /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		A00A36102A3884120030B65F /* HowToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseViewController.swift; sourceTree = "<group>"; };
 		A07B75102A3EFE4A002E375B /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
-		A07B75142A3F06FF002E375B /* input_video_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = input_video_2.mp4; sourceTree = "<group>"; };
-		A07B75162A3F1B62002E375B /* test3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test3.mp4; sourceTree = "<group>"; };
+		A07B75182A3F3F64002E375B /* intro_3s.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro_3s.mp4; sourceTree = "<group>"; };
+		A0A862F02A3FAE1F008F2E0A /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
+		A0A862F22A3FB1A1008F2E0A /* LeagueSpartan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LeagueSpartan.ttf; sourceTree = "<group>"; };
 		A0E41FA32A38851B00B388FA /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		C41366B81EB80DD400EC054A /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		C42A71BC1E9C0AF200944367 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
@@ -108,8 +111,8 @@
 		1488324C1EFC3ED00043E0AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A07B75162A3F1B62002E375B /* test3.mp4 */,
-				A07B75142A3F06FF002E375B /* input_video_2.mp4 */,
+				A0A862F22A3FB1A1008F2E0A /* LeagueSpartan.ttf */,
+				A07B75182A3F3F64002E375B /* intro_3s.mp4 */,
 				3929C49E1E89EE4400E00B60 /* Models.scnassets */,
 				3929C4921E89EC2C00E00B60 /* Assets.xcassets */,
 				3929C4971E89EC2C00E00B60 /* Info.plist */,
@@ -143,6 +146,7 @@
 			children = (
 				3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */,
 				3929C48D1E89EC2C00E00B60 /* ViewController.swift */,
+				A0A862F02A3FAE1F008F2E0A /* LocationPickerViewController.swift */,
 				A07B75102A3EFE4A002E375B /* SplashScreenViewController.swift */,
 				A0E41FA32A38851B00B388FA /* InitialViewController.swift */,
 				C8C12A701F29277B00B011FE /* ViewController+ARSCNViewDelegate.swift */,
@@ -249,10 +253,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A07B75172A3F1B7C002E375B /* test3.mp4 in Resources */,
+				A07B75192A3F3FCF002E375B /* intro_3s.mp4 in Resources */,
 				3929C49F1E89EE4400E00B60 /* Models.scnassets in Resources */,
 				39D8DC1B1E8ADAE600386B05 /* LaunchScreen.storyboard in Resources */,
 				3929C4931E89EC2C00E00B60 /* Assets.xcassets in Resources */,
+				A0A862F32A3FB1A1008F2E0A /* LeagueSpartan.ttf in Resources */,
 				3929C4911E89EC2C00E00B60 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +276,7 @@
 				C41366B91EB80DD400EC054A /* StatusViewController.swift in Sources */,
 				39C0B95A1E9C6B1F003FCA0C /* Utilities.swift in Sources */,
 				147062641F06FA790003EE03 /* VirtualObjectSelection.swift in Sources */,
+				A0A862F12A3FAE1F008F2E0A /* LocationPickerViewController.swift in Sources */,
 				E187105E2253C46A003B54DA /* ViewController+CoachingOverlay.swift in Sources */,
 				C8C12A711F29277B00B011FE /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				C8C2AC521F3A545C00E86BA3 /* VirtualObjectInteraction.swift in Sources */,
