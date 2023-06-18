@@ -16,6 +16,8 @@
 import ARKit
 import SceneKit
 import UIKit
+import AVKit
+import AVFoundation
 
 class InitialViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
@@ -56,6 +58,37 @@ class InitialViewController: UIViewController {
     }
     @IBAction func button5Pressed(_ sender: UIButton) {
         performSegue(withIdentifier: "toHowToUse", sender: sender)
+    }
+    
+    var once = true
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if once {
+            playVideo()
+            once = false
+        }
+    }
+
+    let playerController = AVPlayerViewController()
+
+    private func playVideo() {
+        guard let path = Bundle.main.path(forResource: "input_video_2", ofType: "mp4") else {
+            debugPrint("splash.m4v not found")
+            return
+        }
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        playerController.showsPlaybackControls = false
+        playerController.player = player
+        playerController.videoGravity = .resizeAspectFill
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerController.player?.currentItem)
+        present(playerController, animated: true) {
+            player.play()
+        }
+    }
+
+    @objc func playerDidFinishPlaying(note: NSNotification) {
+        print("Method , video is finished")
+        playerController.dismiss(animated: false){}
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
