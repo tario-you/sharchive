@@ -23,7 +23,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var upperControlsView: UIView!
     
+    @IBOutlet weak var targetLabel: UILabel!
+    
     var locationText: String?
+
+    /// Coordinates the loading and unloading of reference nodes for virtual objects.
+    lazy var virtualObjectLoader = VirtualObjectLoader(locationText: self.locationText)
 
     // MARK: - UI Elements
     
@@ -44,9 +49,6 @@ class ViewController: UIViewController {
     /// A type which manages gesture manipulation of virtual content in the scene.
     lazy var virtualObjectInteraction = VirtualObjectInteraction(sceneView: sceneView, viewController: self)
     
-    /// Coordinates the loading and unloading of reference nodes for virtual objects.
-    let virtualObjectLoader = VirtualObjectLoader()
-    
     /// Marks if the AR experience is available for restart.
     var isRestartAvailable = true
     
@@ -63,8 +65,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        virtualObjectLoader = VirtualObjectLoader(locationText: locationText)
+        
         sceneView.delegate = self
         sceneView.session.delegate = self
+        
+        targetLabel.text = "Aligning " + locationText!
         
         // Set up coaching overlay.
         setupCoachingOverlay()

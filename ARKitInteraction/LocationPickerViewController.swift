@@ -21,9 +21,9 @@ class LocationPickerViewController: UIViewController {
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     
-    var button1text: String = "Location 1"
-    var button2text: String = "Location 2"
-    var button3text: String = "Location 3"
+    var button1text: String = "方浜中路 - 戏台"
+    var button2text: String = "地点 2"
+    var button3text: String = "地点 3"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,10 @@ class LocationPickerViewController: UIViewController {
         button1.setTitleColor(UIColor.white, for: .normal)
         button2.setTitleColor(UIColor.white, for: .normal)
         button3.setTitleColor(UIColor.white, for: .normal)
+        
+        button1.titleLabel?.font = .systemFont(ofSize: 25, weight: .bold)
+        button2.titleLabel?.font = .systemFont(ofSize: 25, weight: .bold)
+        button3.titleLabel?.font = .systemFont(ofSize: 25, weight: .bold)
     }
     
     @IBAction func button1Pressed(_ sender: UIButton) {

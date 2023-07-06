@@ -14,7 +14,7 @@ class HowToUseViewController: UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        label.isHidden=false
         // Set the initial text of the text view
         label.text = "1. select location \n2. line up with qr code\n3. press circle button\n4. enjoy"
     }

@@ -17,10 +17,35 @@ class ObjectCell: UITableViewCell {
     @IBOutlet weak var objectImageView: UIImageView!
     @IBOutlet weak var vibrancyView: UIVisualEffectView!
     
+    func getLastLetterAsInt(_ input: String) -> Int? {
+        guard let lastCharacter = input.last else {
+            return nil
+        }
+        
+        // Attempt to convert the last character to an integer
+        if let lastDigit = Int(String(lastCharacter)) {
+            return lastDigit
+        }
+        
+        return nil
+    }
+
+    
     var modelName = "" {
         didSet {
-            objectTitleLabel.text = modelName.capitalized
+            let lastDigit = getLastLetterAsInt(modelName)
+            
+            var chineseModelName: String? = nil
+            
+            let myList = ["方浜中路路口", "戏台","狮子"]
+
+            if let digit = lastDigit, digit < myList.count {
+                chineseModelName = myList[digit]
+            }
+            
+//            objectTitleLabel.text = modelName.capitalized
             objectImageView.image = UIImage(named: modelName)
+            objectTitleLabel.text = chineseModelName
         }
     }
 }

@@ -42,29 +42,51 @@ class InitialViewController: UIViewController {
         button2.setTitleColor(UIColor.white, for: .normal)
         button3.setTitleColor(UIColor.white, for: .normal)
         
-        button1.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
-        button2.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
-        button3.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button1.setTitleColor(UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1), for: .highlighted)
+        button2.setTitleColor(UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1), for: .highlighted)
+        button3.setTitleColor(UIColor(red: 230/255.0, green: 230/255.0, blue: 230/255.0, alpha: 1), for: .highlighted)
         
-        shanghaiLabel.font = UIFont(name: shanghaiLabel.font.fontName, size: 40)
-        arLabel.font = UIFont(name: arLabel.font.fontName, size: 40)
-        chiveLabel.font = UIFont(name: chiveLabel.font.fontName, size: 40)
+//        if #available(iOS 15.0, *) {
+//            button1.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+//                var outgoing = incoming
+//                outgoing.font = UIFont.systemFont(ofSize: 30)
+//                outgoing.font = UIFont(name:"LeagueSpartan",size: 60)
+//                return outgoing
+//            }
+//        } else {
+//            button1.titleLabel?.font = .systemFont(ofSize: 25, weight: .bold)
+//        }
+        button1.titleLabel?.font = .systemFont(ofSize: 40, weight: .bold)
+        button2.titleLabel?.font = .systemFont(ofSize: 25, weight: .bold)
+        button3.titleLabel?.font = .systemFont(ofSize: 25, weight: .bold)
+        
+//        shanghaiLabel.font = UIFont(name: shanghaiLabel.font.fontName, size: 40)
+//        arLabel.font = UIFont(name: arLabel.font.fontName, size: 40)
+//        chiveLabel.font = UIFont(name: chiveLabel.font.fontName, size: 40)
         // Additional setup code if needed
+        
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.isTranslucent = false
+
     }
     
-    @IBAction func button1Pressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toLocPicker", sender: sender)
-    }
+//    @IBAction func button1Pressed(_ sender: UIButton) {
+//            performSegue(withIdentifier: "toLocPicker", sender: sender)
+//        }
+
+
+        //@IBAction func button2Pressed(_ sender: UIButton) {
+        //    performSegue(withIdentifier: "toHowToUse", sender: sender)
+        //}
+        
+        //@IBAction func button3Pressed(_ sender: UIButton) {
+        //    performSegue(withIdentifier: "toAboutUs", sender: sender)
+        //}
     
-    @IBAction func button2Pressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toHowToUse", sender: sender)
-    }
     
-    @IBAction func button3Pressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "toAboutUs", sender: sender)
-    }
-    
-    var once = true
+    var once = false
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if once {
@@ -88,7 +110,7 @@ class InitialViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: playerController.player?.currentItem)
         
-        present(playerController, animated: false) {
+        present(playerController, animated: true) {
             player.play()
             
             // Schedule a fade-out animation

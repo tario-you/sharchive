@@ -17,6 +17,11 @@ class VirtualObjectLoader {
     
     private(set) var isLoading = false
     
+    var locationText: String?
+
+    init(locationText: String?) {
+        self.locationText = locationText
+    }
     // MARK: - Loading object
 
     /**
@@ -29,7 +34,8 @@ class VirtualObjectLoader {
         
         // Load the content into the reference node.
         DispatchQueue.global(qos: .userInitiated).async {
-            object.load()
+//            object.locationText = self.locationText!
+            object.load() // replace with above
             self.isLoading = false
             loadedHandler(object)
         }

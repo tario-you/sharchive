@@ -11,6 +11,17 @@ import ARKit
 
 class VirtualObject: SCNReferenceNode {
     
+    var locationText: String?
+        
+//    init(url: URL, locationText: String) {
+//        self.locationText = locationText
+//        super.init(url: url)!
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
     /// The model name derived from the `referenceURL`.
     var modelName: String {
         return referenceURL.lastPathComponent.replacingOccurrences(of: ".scn", with: "")
@@ -68,7 +79,15 @@ extension VirtualObject {
     // MARK: Static Properties and Methods
     /// Loads all the model objects within `Models.scnassets`.
     static let availableObjects: [VirtualObject] = {
-        let modelsURL = Bundle.main.url(forResource: "Models.scnassets", withExtension: nil)!
+        var modelsURL = Bundle.main.url(forResource: "Models.scnassets", withExtension: nil)!
+            
+//        if self.locationText == "loc1" {
+//          modelsURL = Bundle.main.url(forResource: "Models1.scnassets", withExtension: nil)!
+//        } else if self.locationText == "loc2" {
+//          modelsURL = Bundle.main.url(forResource: "Models2.scnassets", withExtension: nil)!
+//        } else {
+//          modelsURL = Bundle.main.url(forResource: "Models3.scnassets", withExtension: nil)!
+//        }
 
         let fileEnumerator = FileManager().enumerator(at: modelsURL, includingPropertiesForKeys: [])!
 

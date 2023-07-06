@@ -26,10 +26,34 @@ class VirtualObjectARView: ARSCNView {
     /// - Tag: AddOrUpdateAnchor
     func addOrUpdateAnchor(for object: VirtualObject) {
         // If the anchor is not nil, remove it from the session.
+//        if let anchor = object.anchor {
+//            session.remove(anchor: anchor)
+//        }else{
+//            // anchor doesnt exist yet
+//            let right_meters = 3.000
+//            let forward_meters = 3.000
+//
+//            var translation = matrix_identity_float4x4
+//            translation.columns.3.x = Float(right_meters)   // meters to move to the right
+//            translation.columns.3.z = Float(-forward_meters)  // meters to move forward
+//
+//            let modifiedTransform = simd_mul(object.simdWorldTransform, translation)
+//            let newAnchor = ARAnchor(transform: modifiedTransform)
+//
+////            let newAnchor = ARAnchor(transform: object.simdWorldTransform)
+//            object.anchor = newAnchor
+//            session.add(anchor: newAnchor)
+//            session.remove(anchor: newAnchor)
+//        }
+//
+//        // Create a new anchor with the object's current transform and add it to the session
+//        let newAnchor = ARAnchor(transform: object.simdWorldTransform)
+//        object.anchor = newAnchor
+//        session.add(anchor: newAnchor)
         if let anchor = object.anchor {
             session.remove(anchor: anchor)
         }
-        
+
         // Create a new anchor with the object's current transform and add it to the session
         let newAnchor = ARAnchor(transform: object.simdWorldTransform)
         object.anchor = newAnchor

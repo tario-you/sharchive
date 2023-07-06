@@ -13,9 +13,9 @@ class AboutUsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        label.isHidden=false
         // Set the initial text of the text view
-        label.text = "We are 5 highschool students from shanghai american school and we all hate aaron lowkey hes a bitch"
+        label.text = "We are "
     }
 }
 

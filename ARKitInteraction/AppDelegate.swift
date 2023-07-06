@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "startvc")
+//        let navi =  UINavigationController.init(rootViewController: initialVC)
+//        window?.rootViewController = navi
+//        UIApplication.shared.isStatusBarHidden = false
         return true
     }
     

@@ -29,7 +29,7 @@ class SplashScreenViewController: UIViewController {
     let playerController = AVPlayerViewController()
 
     private func playVideo() {
-        guard let path = Bundle.main.path(forResource: "input_video_2", ofType: "mp4") else {
+        guard let path = Bundle.main.path(forResource: "intro_3s", ofType: "mp4") else {
             debugPrint("splash.m4v not found")
             return
         }
@@ -38,7 +38,7 @@ class SplashScreenViewController: UIViewController {
         playerController.player = player
         playerController.videoGravity = .resizeAspectFill
         NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerController.player?.currentItem)
-        present(playerController, animated: true) {
+        present(playerController, animated: false) {
             player.play()
         }
     }
