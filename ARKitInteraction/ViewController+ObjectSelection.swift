@@ -94,6 +94,8 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate {
         virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
             
             do {
+                print("trying to load")
+                print(object.referenceURL)
                 let scene = try SCNScene(url: object.referenceURL, options: nil)
                 self.sceneView.prepare([scene], completionHandler: { _ in
                     DispatchQueue.main.async {
